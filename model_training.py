@@ -306,7 +306,13 @@ gridsearch.score(X_test, y_test)
 print(grid.best_params_)
 
 print('The best scaler and classifier for this case is {} with accuracy {}'
-      .format(best_pipeline.steps, best_score))
+      .format(best_pipeline.steps, gridsearch.score(X_test, y_test)))
+
+print(f'The best scaler and classifier is {best_pipeline.steps}')
+print(f'The hyperparameter is {grid.best_params_}')
+print(f'The score of model using GridSearchCV is\
+      {gridsearch.score(X_test, y_test)}')
+
 
 #%% model analysis
 
